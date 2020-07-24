@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>TensorBroad</title>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="jquery.csv.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div id="loaded_counts">
+            <br>
+            <span id="n_loaded">0</span> loaded runs<br>
+            <span id="n_runs">0</span> runs displayed<br>
+            <span id="n_metrics">0</span> metrics displayed
+        </div>
+        <div id="filters">
+            <b>Filters</b><br><br>
+            <label class="filtername">Metrics:</label>
+            <input type="text" id="metrics" value="exit_counter_mean policy_reward_mean"/>
+            &emsp;(Spaces represent
+            <select id="metrics_selector">
+                <option value="or" selected="selected">OR</option>
+                <option value="and">AND</option>
+            </select>
+            operator)
+            <br><br>
+            <label class="filtername">Runs:</label>
+            <input type="text" id="runs" value="reroute 0p1"/>
+            &emsp;(Spaces represent
+            <select id="runs_selector">
+                <option value="or">OR</option>
+                <option value="and" selected="selected">AND</option>
+            </select>
+            operator)
+        </div>
+        <br>
+        <div id="smoothing">
+            <b>Smoothing</b> <span id="smoothing_value">0.6</span><br><br>
+            <span>0</span> <input type="range" min="0" max="100" value="60" id="smoothing_slider"> <span>1</span>
+        </div>
+        <br>
+        <hr id="sep">
+
+        <div id="plots"></div>
+
+        <div id="info">
+            <table id="infotable">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Value</th>
+                        <th>Iter</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

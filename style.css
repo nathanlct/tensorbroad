@@ -1,0 +1,98 @@
+body {
+    padding-bottom: 500px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+
+#plots {
+    display:flex;
+    flex-wrap:wrap;
+}
+
+#info {
+    z-index:3;
+    right: 20px; 
+    left: 20px;
+    bottom: 20px;
+    padding: 10px;
+    position: fixed;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-family: monospace;
+    color: white;
+    display: none;
+}
+
+#info th,td {
+    text-align: left;
+    padding: 3px 7px 3px 7px;
+}
+
+#info .dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
+#loaded_counts {
+    float: right;
+}
+
+#filters, #smoothing {
+    margin-left: 10px;
+}
+
+#filters input {
+    width: 50%;
+    height: 30px;
+    font-size: 16px;
+    line-height: 30px;
+    box-sizing: border-box;
+    border:0;
+    background: none;
+    border:1px solid #ccc;
+    outline:none;
+    border-radius: 3px;
+    padding-left: 5px;
+    margin: 0;
+}
+
+#filters input:focus {
+    border: 1px solid lightblue;
+}
+
+#filters select {
+    height: 30px;
+    font-size: 16px;
+    line-height: 30px;
+    box-sizing: border-box;
+    border: 0;
+    background: none;
+    border: 1px solid #ccc;
+    outline:none;
+    border-radius: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 3px;
+}
+
+hr#sep {
+    clear: both;
+}
+
+.filtername {
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+}
+
+#smoothing span {
+    font-size: 17px;
+}
+
+#smoothing_slider {
+    width: 150px;
+    /* height: 25px; */
+}
