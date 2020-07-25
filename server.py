@@ -44,7 +44,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
         root = os.path.expanduser(self.logdir)
         for (dirpath, _, filenames) in os.walk(root):
             if 'progress.csv' in filenames:
-                self.csv_paths.append(os.path.join(dirpath[len(root)+1:], 'progress.csv'))
+                self.csv_paths.append(os.path.join(os.path.relpath(dirpath, root), 'progress.csv'))
 
 
 if __name__ == '__main__':
@@ -58,4 +58,5 @@ if __name__ == '__main__':
                     print('Serving at address http://localhost:' + str(port) + '/main.html (Press CTRL+C to quit)')
                     httpd.serve_forever()
             except OSError as e:
+                print(e)
                 port += 1
